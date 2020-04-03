@@ -15,6 +15,10 @@ RSpec.describe "As a user, when is visit the parks show page", type: :feature do
     expect(page).to have_content(universal.name)
     expect(page).to have_content(universal.admission_price)
   end
+
+  it "I see all of the rides at the park" do
+    
+  end
 end
 
 
