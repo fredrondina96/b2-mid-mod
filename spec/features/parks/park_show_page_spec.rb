@@ -16,8 +16,17 @@ RSpec.describe "As a user, when is visit the parks show page", type: :feature do
     expect(page).to have_content(universal.admission_price)
   end
 
-  it "I see all of the rides at the park" do
-    
+  it "I see all of the rides at the park listed alphabetically" do
+    busch_gardens = Park.create!(name: "Busch Gardens", admission_price: 50)
+
+    montu = busch_gardens.rides.create!(name: "Montu", thrill_rating: 8)
+    kumba = busch_gardens.rides.create!(name: "Kumba", thrill_rating: 7)
+
+    visit "/amusmant_parks/#{busch_gardens.id}"
+
+    expect(page).to have_content("1: #{kumba.name}")
+
+    expect(page).to have_content("2: #{montu.name}")
   end
 end
 

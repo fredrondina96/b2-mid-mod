@@ -1,2 +1,7 @@
 <h1><%=@park.name%></h1>
-<h3>Admission Price: $<%=@park.admission_price.to_s%>.00</h3>
+<h4>Admission Price: $<%=@park.admission_price.to_s%>.00</h4>
+
+<h3>Rides:</h3>
+  <%@park.ordered_rides.each_with_index do |ride, index|%>
+    <h4><%=(index + 1)%>: <%=ride.name%></h4><br>
+  <%end%>
