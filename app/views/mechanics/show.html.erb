@@ -6,6 +6,8 @@
   <%=ride.name%><br>
 <%end%>
 
+
+<br><h4>Add Ride to Work Load</h4>
 <%= form_tag("/mechanics/#{@mechanic.id}", method: :patch) do %><br>
   <%= label_tag :ride_id%><br>
   <%= text_field_tag :ride_id %><br>
