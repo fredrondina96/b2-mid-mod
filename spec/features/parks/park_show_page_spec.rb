@@ -28,22 +28,15 @@ RSpec.describe "As a user, when is visit the parks show page", type: :feature do
 
     expect(page).to have_content("2: #{montu.name}")
   end
+
+  it "I see the average thrill rating of the parks rides" do
+    busch_gardens = Park.create!(name: "Busch Gardens", admission_price: 50)
+
+    montu = busch_gardens.rides.create!(name: "Montu", thrill_rating: 8)
+    cheeta_chase = busch_gardens.rides.create!(name: "Kumba", thrill_rating: 2)
+
+    visit "/amusmant_parks/#{busch_gardens.id}"
+
+    expect(page).to have_content("Average Ride Thrill Rating: 5.0")
+  end
 end
-
-
-# Story 2
-# As a visitor,
-# When I visit an amusement park’s show page
-# I see the name and price of admissions for that amusement park
-# And I see the names of all the rides that are at that theme park listed in alphabetical order
-# And I see the average thrill rating of this amusement park’s rides
-#
-# Ex: Hershey Park
-#     Admissions: $50.00
-#
-#     Rides:
-#            1. Lightning Racer
-#            2. Storm Runner
-#            3. The Great Bear
-#
-#     Average Thrill Rating of Rides: 7.8/10

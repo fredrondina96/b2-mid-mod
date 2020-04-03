@@ -3,5 +3,7 @@
 
 <h3>Rides:</h3>
   <%@park.ordered_rides.each_with_index do |ride, index|%>
-    <h4><%=(index + 1)%>: <%=ride.name%></h4><br>
-  <%end%>
+    <h4><%=(index + 1)%>: <%=ride.name%></h4>
+  <%end%><br><br>
+
+<h4>Average Ride Thrill Rating: <%=@park.rides.average(:thrill_rating).to_f%></h4>

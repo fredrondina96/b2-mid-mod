@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Ride.destroy_all
+Park.destroy_all
+
+busch_gardens = Park.create!(name: "Busch Gardens", admission_price: 50)
+
+montu = busch_gardens.rides.create!(name: "Montu", thrill_rating: 8)
+cheeta_chase = busch_gardens.rides.create!(name: "Kumba", thrill_rating: 2)
