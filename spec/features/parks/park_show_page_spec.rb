@@ -20,13 +20,14 @@ RSpec.describe "As a user, when is visit the parks show page", type: :feature do
     busch_gardens = Park.create!(name: "Busch Gardens", admission_price: 50)
 
     montu = busch_gardens.rides.create!(name: "Montu", thrill_rating: 8)
+    zebra = busch_gardens.rides.create!(name: "Zippin Zebra", thrill_rating: 4)
     kumba = busch_gardens.rides.create!(name: "Kumba", thrill_rating: 7)
 
     visit "/amusmant_parks/#{busch_gardens.id}"
 
     expect(page).to have_content("1: #{kumba.name}")
-
     expect(page).to have_content("2: #{montu.name}")
+    expect(page).to have_content("3: #{zebra.name}")
   end
 
   it "I see the average thrill rating of the parks rides" do

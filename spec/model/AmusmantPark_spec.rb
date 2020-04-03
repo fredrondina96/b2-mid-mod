@@ -29,7 +29,6 @@ RSpec.describe Park, type: :model do
       montu = busch_gardens.rides.create!(name: "Montu", thrill_rating: 10)
       kumba = busch_gardens.rides.create!(name: "Kumba", thrill_rating: 7)
 
-
       expect(busch_gardens.average_thrill_rating).to eq(8.5)
     end
   end
