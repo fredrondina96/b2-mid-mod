@@ -6,4 +6,4 @@
     <h4><%=(index + 1)%>: <%=ride.name%></h4>
   <%end%><br><br>
 
-<h4>Average Ride Thrill Rating: <%=@park.rides.average(:thrill_rating).to_f%></h4>
+<h4>Average Ride Thrill Rating: <%=@park.average_thrill_rating.round(1)%></h4>

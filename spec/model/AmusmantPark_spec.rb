@@ -22,5 +22,17 @@ RSpec.describe Park, type: :model do
     end
   end
 
+  describe "average_thrill_rating" do
+    it "should return average of all rides thrill rating" do
+      busch_gardens = Park.create!(name: "Busch Gardens", admission_price: 50)
+
+      montu = busch_gardens.rides.create!(name: "Montu", thrill_rating: 10)
+      kumba = busch_gardens.rides.create!(name: "Kumba", thrill_rating: 7)
+
+
+      expect(busch_gardens.average_thrill_rating).to eq(8.5)
+    end
+  end
+
 
 end

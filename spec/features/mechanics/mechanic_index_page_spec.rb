@@ -15,10 +15,3 @@ RSpec.describe "When a User visits the Mechanic index page", type: :feature do
     expect(page).to have_content(bobby.name)
   end
 end
-
-
-# Story 1
-# As a user,
-# When I visit a mechanics index page
-# I see a header saying “All Mechanics”
-# And I see a list of all mechanic’s names and their years of experience

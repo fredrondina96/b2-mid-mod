@@ -6,4 +6,8 @@ class Park < ApplicationRecord
   def ordered_rides
     rides.order(:name)
   end
+
+  def average_thrill_rating
+    rides.average(:thrill_rating).to_f
+  end
 end
