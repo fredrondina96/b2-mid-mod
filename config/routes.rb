@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   patch "/mechanics/:id", to: 'mechanics#update'
 
   get "/amusmant_parks/:park_id", to: 'parks#show'
+
+  get "/rides/:id", to: 'rides#show'
 end

@@ -1,0 +1,7 @@
+<h1><%=@ride.name%></h1>
+<h4><%=@ride.thrill_rating%></h4>
+
+<h4>Rides with Same Thrill Rating</h4>
+<%@ride.rides_with_same_thrill_rating.each do |ride| %>
+  <%= link_to "#{ride.name}", "/rides/#{ride.id}"%>
+<%end %>
